@@ -52,7 +52,7 @@ public final class DiceGame {
             counter += 1;
             try {
                 // condition
-                final int userNumber = Integer.parseInt(myObj.nextLine());
+                final float userNumber = myObj.nextFloat();
                 if (userNumber >= 1 && userNumber <= NORMAL_DICE) {
                     if (userNumber >= randomNumber) {
                         if (userNumber <= randomNumber) {
@@ -73,9 +73,10 @@ public final class DiceGame {
 
             }
             catch (java.util.InputMismatchException errorCode) {
-                System.err.print("Invalid input!");
+                System.err.print("This number is not an integer.\n\nDone\n");
+                System.exit(0);
             }
-            System.out.println("\nTry again!");
+            System.out.println("\nTry again!\n");
         }
         System.out.println("Correct! The number is " + randomNumber
                            + "!\nIt took you " + counter + " tries.");
